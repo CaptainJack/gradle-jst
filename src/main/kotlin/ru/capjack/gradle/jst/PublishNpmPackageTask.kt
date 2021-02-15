@@ -3,6 +3,7 @@ package ru.capjack.gradle.jst
 import com.moowork.gradle.node.npm.NpmExecRunner
 import com.moowork.gradle.node.npm.NpmSetupTask
 import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.property
@@ -10,15 +11,15 @@ import org.gradle.kotlin.dsl.property
 @Suppress("LeakingThis", "UnstableApiUsage")
 open class PublishNpmPackageTask() : DefaultTask() {
 	
-	val packageDir = project.objects.directoryProperty().convention(
+	private val packageDir = project.objects.directoryProperty().convention(
 		project.extensions.getByType<JstExtension>().publicationDir
 	)
 	
-	val npmRegistry = project.objects.property<String>().convention(
+	private val npmRegistry = project.objects.property<String>().convention(
 		project.extensions.getByType<JstExtension>().npmRegistry
 	)
 	
-	val npmToken = project.objects.property<String>().convention(
+	private val npmToken = project.objects.property<String>().convention(
 		project.extensions.getByType<JstExtension>().npmToken
 	)
 	
