@@ -19,6 +19,7 @@ dependencies {
 gradlePlugin {
 	plugins.create("jst") {
 		id = "ru.capjack.jst"
+		displayName = "JavaScript tools"
 		implementationClass = "ru.capjack.gradle.jst.JstPlugin"
 	}
 }
@@ -26,6 +27,7 @@ gradlePlugin {
 pluginBundle {
 	vcsUrl = "https://github.com/CaptainJack/gradle-jst"
 	website = vcsUrl
+	description = "JavaScript tools"
 	tags = listOf("capjack", "js", "tool", "jst")
 }
 
